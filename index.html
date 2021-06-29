@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Word and Character Counter</title>
+    <style>
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#msg {
+    color: yellow;
+}
+#display {
+color: beige;
+
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 25px;
+} 
+
+    </style>
+</head>
+<body>
+    <h2>Word and Character Counter</h2>
+<textarea id = "content" class = "txt" rows = "20" cols="50" runat="server" ></textarea>
+
+<br />
+<input type = "button" value = "Count" onclick = "words(), characters()"></input>
+<br /> <br /> 
+    <div id = "word"></div>
+    <div id = "chars"></div>
+
+    <script>
+function words() {
+var word = document.getElementById('content').value;
+var splitWords = word.split(' ').length;
+document.getElementById('word').innerHTML = splitWords + ' words';
+}
+
+function characters() {
+    var characters = document.getElementById('content').value;
+    var splitChars= characters.replace(/\s/g, "").length;
+document.getElementById('chars').innerHTML = splitChars + ' characters'
+}
+    </script>
+</body>
+</html>
